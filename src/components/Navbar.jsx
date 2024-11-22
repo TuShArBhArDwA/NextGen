@@ -22,6 +22,10 @@ const Navbar = () => {
           >
             Already a user? Login here
           </button>
+          <button className="new-user-btn">
+  New User? Register here
+</button>
+
         </div>
       </nav>
     </header>
