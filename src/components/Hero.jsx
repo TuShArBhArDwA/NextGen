@@ -18,7 +18,7 @@ const Hero = () => {
     window.addEventListener('resize', handleVideoSrcSet);
 
     return () => {
-      window.removeEventListener('reisze', handleVideoSrcSet)
+      window.removeEventListener('resize', handleVideoSrcSet)
     }
   }, [])
 

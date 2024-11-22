@@ -1,0 +1,40 @@
+.glowing-button {
+    border: 2px solid #FFD700; /* Gold border */
+    color: #FFD700; /* Gold text */
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  }
+  
+  .glowing-button:hover {
+    background-color: #FFD700; /* Gold background */
+    color: #1A1A1A; /* Dark text on hover */
+    box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 60px #FFD700;
+  }
+  
+  /* Lightning effect on hover */
+  .glowing-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 10%, rgba(255, 215, 0, 0) 60%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    filter: blur(30px);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .glowing-button:hover::before {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  
+  .glowing-button:focus {
+    outline: none; /* Removes focus outline */
+  }
+  
