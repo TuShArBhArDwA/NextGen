@@ -30,7 +30,7 @@ const Hero = () => {
   return (
     <section className="w-full nav-height bg-black relative">
       <div className="h-5/6 w-full flex-center flex-col">
-        <p id="hero" className="hero-title">AGGRESSIVE CREDIT REPAIR SOFTWARE</p>
+        <p id="hero" className="hero-title">COMBATIVE CREDIT REPAIR SOFTWARE</p>
         <p id="hero" className="hero-title">Elevate Your Credit Score
         with the Power of Ai</p>
         {/* <div className="md:w-10/12 w-9/12">

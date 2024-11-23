@@ -109,7 +109,7 @@ const HowItWorks = () => {
                 'Select the subscription plan that best suits your needs to start addressing your credit issues with full access to all features and resources.',
             },
             {
-              title: 'Step 4: Generate and Send Metro2 Dispute Letters',
+              title: 'Step 4: Generate and Send NextGen Dispute Letters',
               description:
                 'Leverage the AI-powered compliance technology to generate personalized dispute letters and send them to credit bureaus, working towards improving your credit score.',
             },
