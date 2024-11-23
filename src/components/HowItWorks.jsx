@@ -96,7 +96,7 @@ const HowItWorks = () => {
             {
               title: 'Step 1: Sign Up For Free',
               description:
-                'Create your free account on the Metro2 Phenom website to access the platform and start your credit repair journey.',
+                'Create your free account on the NextGen website to access the platform and start your credit repair journey.',
             },
             {
               title: 'Step 2: Analyze Your Credit Report',
