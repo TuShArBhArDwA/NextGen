@@ -53,4 +53,7 @@
     color: white; /* White text on hover */
     transform: scale(1.05); /* Slightly larger on hover */
   }
+  html {
+    scroll-behavior: smooth;
+  }
   

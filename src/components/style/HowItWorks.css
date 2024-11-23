@@ -1,0 +1,13 @@
+.hiw-content {
+    margin-right: 10%; /* Increase this to push content to the left */
+    word-wrap: break-word;
+    max-width: 90%; /* Controls the width at which the text breaks */
+  }
+  
+  .hiw-title,
+  .hiw-subtitle,
+  .hiw-text {
+    word-wrap: break-word;
+    max-width: 90%; /* Ensure text doesn't overflow */
+  }
+  
