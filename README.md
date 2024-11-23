@@ -37,7 +37,7 @@ Explore the future of technology with **NextGen** and become a part of a transfo
 
 ---
 
-## ⚙Technologies Used  
+## Technologies Used  
 
 - **Next.js**: For building the scalable and high-performance framework.  
 - **React.js**: For creating interactive user interfaces.  
@@ -47,7 +47,7 @@ Explore the future of technology with **NextGen** and become a part of a transfo
 
 ---
 
-## 🛠Getting Started  
+## Getting Started  
 
 ### Prerequisites  
 
@@ -58,9 +58,40 @@ Explore the future of technology with **NextGen** and become a part of a transfo
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/nextgen.git
+   git clone https://github.com/TuShArBhArDwA/nextgen.git
    cd nextgen
+2. Install the dependencies:
+   ```bash
+   npm install
+3. Start the development server:
+   ```bash
+   npm run dev
+4. Open your browser and navigate to:
+   ```bash
+   http://localhost:3000
 
+## Usage
+- Explore the dashboard to access all features.
+- Customize settings based on your requirements.
+- Integrate APIs or third-party services for extended functionalities.
+- Deploy the application using Vercel or any preferred hosting provider.
+
+## Contributing
+Contributions are always welcome! To get started:
+
+1. Fork the repository.
+
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature-name"
+4. Push to the branch:
+
+   ```bash
+   git push origin feature-name
+5. Submit a pull request detailing your changes.
 
 ## License
 This project is licensed under the MIT License. Feel free to use, modify, and distribute the code within the scope of the license.
