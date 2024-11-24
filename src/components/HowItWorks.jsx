@@ -96,22 +96,22 @@ const HowItWorks = () => {
             {
               title: 'Step 1: Sign Up For Free',
               description:
-                'Create your free account on the NextGen website to access the platform and start your credit repair journey.',
+                'Create a free account on the Next Gen website to gain access to the platform and begin your credit repair journey.',
             },
             {
-              title: 'Step 2: Analyze Your Credit Report',
+              title: 'Step 2: Examine Your Credit Report',
               description:
-                'Use the AI-driven tools to review and analyze your credit report, identifying areas that need improvement.',
+                'Utilize AI-driven technologies to examine and assess your credit record, pinpointing areas requiring enhancement.',
             },
             {
-              title: 'Step 3: Choose Your Plan',
+              title: 'Step 3: Select your plan',
               description:
-                'Select the subscription plan that best suits your needs to start addressing your credit issues with full access to all features and resources.',
+                'Choose the subscription package that most effectively addresses your requirements to commence resolving your credit troubles with complete access to all features and resources.',
             },
             {
-              title: 'Step 4: Generate and Send NextGen Dispute Letters',
+              title: 'Step 4: Produce and Dispatch Next Generation Dispute Correspondence',
               description:
-                'Leverage the AI-powered compliance technology to generate personalized dispute letters and send them to credit bureaus, working towards improving your credit score.',
+                'Utilize AI-powered compliance technology to write individualized dispute letters and send them to credit bureaus, thereby increasing your credit score.',
             },
           ].map((step, index) => (
             <div

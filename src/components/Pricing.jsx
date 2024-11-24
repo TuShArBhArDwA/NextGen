@@ -63,7 +63,7 @@ const Pricing = () => {
           {[
             "Service 1-4 People / Month",
             "Generate Unlimited Metro 2 Letters Per Attach",
-            "6 Metro 2 Attack Types Included",
+            "6 NextGen Attack Types Included",
             "Free Live Weekly Software Training",
             "Free Support Community Access",
             "Printing & Mailing Service Available",
