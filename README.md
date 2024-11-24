@@ -1,5 +1,8 @@
 # NextGen  
 
+![image](https://github.com/user-attachments/assets/cc08c69e-8a7f-425a-9262-4a1b18948b06)
+
+
 **NextGen** is a cutting-edge platform designed to revolutionize how users interact with technology and digital solutions. From dynamic features to seamless user experience, **NextGen** leverages the latest web technologies to deliver an innovative, efficient, and user-friendly platform. Whether you are a developer, entrepreneur, or casual user, **NextGen** caters to all by providing tools and solutions tailored to modern needs.
 
 Explore the future of technology with **NextGen** and become a part of a transformative digital journey.
