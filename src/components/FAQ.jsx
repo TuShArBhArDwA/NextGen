@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const faqRefs = useRef([]);
 
   const toggleAnswer = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -36,25 +41,63 @@ const FAQ = () => {
     },
   ];
 
+  useEffect(() => {
+    // ScrollTrigger for animating FAQ items when they come into view
+    faqRefs.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          delay: index * 0.2,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: 1,
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
     <section className="bg-gradient-to-b from-black via-gray-900 to-gray-800 py-16 text-white">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold">Got Questions? NextGen Got Answers...</h2>
-        <p className="mt-4 text-lg">
+        <motion.h2
+          className="text-4xl font-bold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+        >
+          Got Questions? NextGen Got Answers...
+        </motion.h2>
+        <motion.p
+          className="mt-4 text-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.5, ease: "easeInOut" }}
+        >
           Have further questions about enrollment?{" "}
           <a
-            href="mailto:info@nextgen.com"
+            href="mailto:born2rock5678@gmail.com"
             className="text-orange-500 underline"
           >
             Reach out to us.
           </a>
-        </p>
+        </motion.p>
       </div>
+
       <div className="max-w-4xl mx-auto space-y-6">
         {faqs.map((faq, index) => (
           <div
             key={index}
             className="bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+            ref={(el) => (faqRefs.current[index] = el)} // Assign ref for scroll trigger
           >
             {/* Question Section */}
             <motion.button
