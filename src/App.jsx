@@ -1,12 +1,10 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Highlights from './components/Highlights';
-import Model from './components/Model';
-import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
 import * as Sentry from '@sentry/react';
 import FAQ from './components/FAQ';
+import Pricing from './components/Pricing';
 const App = () => {
   return (
     <main className="bg-black">
@@ -16,6 +14,7 @@ const App = () => {
       <Model />
       <Features /> */}
       <HowItWorks />
+      <Pricing/>
       <FAQ/>
       <Footer />
     </main>
