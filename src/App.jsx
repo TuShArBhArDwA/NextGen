@@ -6,6 +6,7 @@ import FAQ from './components/FAQ';
 import Pricing from './components/Pricing';
 import CreditEnhancement from './components/CreditEnhancement';
 import Contact from './components/Contact';
+import Testimonial from './components/Testinomials';
 const App = () => {
   return (
     <main className="bg-black">
@@ -14,6 +15,7 @@ const App = () => {
       <CreditEnhancement/>
       <HowItWorks />
       <Pricing/>
+      <Testimonial/>
       <FAQ/>
       <Contact/>
       <Footer />

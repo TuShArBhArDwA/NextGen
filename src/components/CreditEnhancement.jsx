@@ -71,7 +71,7 @@ const CreditEnhancement = () => {
   }, []);
 
   return (
-    <div className="credit-enhancement bg-black text-white py-16 px-6 lg:px-20">
+    <div id="home" className="credit-enhancement bg-black text-white py-16 px-6 lg:px-20">
       {/* Title Section */}
       <div
         className="text-center mb-12"

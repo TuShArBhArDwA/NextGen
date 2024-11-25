@@ -9,7 +9,7 @@ import {
   yellowImg,
 } from "../utils";
 
-export const navLists = ["Home", "How It Works", "Pricing", "FAQ", "Contact Us", "Testimonials"];
+export const navLists = ["Home", "How It Works", "Pricing", "Testimonials", "FAQ", "Contact Us"];
 
 
 export const footerLinks = [
