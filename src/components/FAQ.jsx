@@ -53,9 +53,10 @@ const FAQ = () => {
           duration: 1,
           ease: "power3.out",
           delay: index * 0.2,
+          force3D: true, // Helps for smoother animations, especially on mobile
           scrollTrigger: {
             trigger: el,
-            start: "top 80%",
+            start: "top 75%", // Adjusted for mobile view
             end: "top 50%",
             scrub: 1,
             toggleActions: "play none none none",
