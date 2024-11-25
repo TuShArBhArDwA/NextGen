@@ -23,6 +23,7 @@ const CreditEnhancement = () => {
         scrollTrigger: {
           trigger: showcaseRef.current,
           start: "top 80%",
+          end: "bottom 20%", // Delay the trigger for end position
           toggleActions: "play reverse play reverse", // Animate in and out
         },
       }
@@ -40,8 +41,8 @@ const CreditEnhancement = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: feature,
-            start: "top 85%",
-            end: "top 50%",
+            start: "top 90%", // Delay start a bit more
+            end: "top 30%",   // Ensure it ends near the bottom of the feature
             toggleActions: "play reverse play reverse",
           },
         }
@@ -60,7 +61,8 @@ const CreditEnhancement = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 85%",
+            start: "top 85%", // Trigger later, when it's closer to the viewport
+            end: "top 25%",   // Ensure it ends later when the section is almost at the end
             toggleActions: "play reverse play reverse",
           },
         }
