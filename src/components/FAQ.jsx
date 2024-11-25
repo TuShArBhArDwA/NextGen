@@ -63,9 +63,10 @@ const FAQ = () => {
           transition={{ duration: 1.2, delay: 0.5, ease: "easeInOut" }}
         >
           Have further questions about enrollment?{" "}
-          <a href="mailto:born2rock5678@gmail.com" className="text-orange-500 underline">
+          <a href="#contact-us" className="text-orange-500 underline">
             Reach out to us.
           </a>
+
         </motion.p>
       </div>
 
