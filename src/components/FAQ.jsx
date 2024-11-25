@@ -46,7 +46,7 @@ const FAQ = () => {
   }, []);
 
   return (
-    <section id="faq" className="bg-gradient-to-b from-black via-gray-900 to-gray-800 py-16 text-white">
+    <section id="faq" className="bg-gradient-to-b from-black text-white">
       <div className="text-center mb-12">
         <motion.h2
           className="text-4xl font-bold"

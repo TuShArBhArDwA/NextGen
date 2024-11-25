@@ -54,7 +54,7 @@ const Hero = () => {
           <div class="inline-block w-[15px] h-[15px] bg-white clip-star transition-transform duration-200 ease-[cubic-bezier(0.12,0.28,0.5,1.67)]"></div>
         </div>
 
-        <p>Loved by 12,300+ Focused Students</p>
+        <p>Loved by 12,300+</p>
         
         {/* <div class="flex items-center justify-center gap-3 bg-black py-4">
   

@@ -57,7 +57,7 @@ export default function Contact() {
   return (
     <section
       id="contact-us"
-      className="bg-gradient-to-b from-gray-800 via-gray-900 to-black py-16 text-white"
+      className="bg-gradient-to-b from-black py-16 text-white"
     >
       <div className="text-center mb-12">
         <motion.h2
