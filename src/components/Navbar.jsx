@@ -25,9 +25,9 @@ const Navbar = () => {
           <button
             className="glowing-button text-sm font-semibold text-gray px-4 py-2 rounded relative"
           >
-            Already a user? Login here
+            Login here
           </button>
-          <button className="new-user-btn">New User? Register here</button>
+          <button className="new-user-btn">Register here</button>
         </div>
       </nav>
     </header>
