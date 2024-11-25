@@ -6,27 +6,29 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Pricing = () => {
-  const cardRef = useRef(null);
+  const sectionsRef = useRef([]); // Array ref for scroll-triggered animations
 
   useEffect(() => {
-    // GSAP animation for card on scroll
-    gsap.fromTo(
-      cardRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: "top 80%",
-          end: "top 50%",
-          scrub: 1,
-          toggleActions: "play none none none",
-        },
-      }
-    );
+    // GSAP animation for all sections
+    sectionsRef.current.forEach((section) => {
+      gsap.fromTo(
+        section,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: 1,
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
   }, []);
 
   return (
@@ -35,17 +37,23 @@ const Pricing = () => {
       className="bg-black text-white py-16 flex flex-col items-center"
     >
       {/* Title Section */}
-      <div className="text-center mb-12">
-        <h2 className="text-5xl font-bold mb-4">Finally, Unlock Better Credit.</h2>
+      <div
+        className="text-center mb-12"
+        ref={(el) => sectionsRef.current.push(el)} // Add to sectionsRef
+      >
+        <h2 className="text-5xl font-bold mb-4">
+          Unlock the Path to Better Credit Today.
+        </h2>
         <p className="text-lg text-gray-400">
-          Join The NextGen software today, enjoy unrestricted access to ALL
-          content and benefits PLUS today's limited-time bonuses.
+          Upgrade to the Next Gen software today and unlock unlimited access to
+          every feature, exclusive benefits, and limited-time bonuses designed
+          to maximize your success. Don't miss out!
         </p>
       </div>
 
       {/* Motion card with hover and click animations */}
       <motion.div
-        ref={cardRef}
+        ref={(el) => sectionsRef.current.push(el)} // Add to sectionsRef
         className="w-full max-w-lg bg-gray-900 text-center rounded-lg shadow-lg p-8"
         whileHover={{ scale: 1.1 }} // Zoom on hover
         whileTap={{ scale: 1.15 }} // Slightly more zoom on click

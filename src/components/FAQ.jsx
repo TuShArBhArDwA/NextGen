@@ -8,6 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const faqRefs = useRef([]);
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
 
   const toggleAnswer = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -42,7 +44,40 @@ const FAQ = () => {
   ];
 
   useEffect(() => {
-    // ScrollTrigger for animating FAQ items when they come into view
+    // Animating the title and description
+    gsap.fromTo(
+      titleRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 85%",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      descriptionRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: descriptionRef.current,
+          start: "top 85%",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+
+    // Animating FAQ items
     faqRefs.current.forEach((el, index) => {
       gsap.fromTo(
         el,
@@ -55,10 +90,9 @@ const FAQ = () => {
           delay: index * 0.2,
           scrollTrigger: {
             trigger: el,
-            start: "top 80%",
+            start: "top 85%",
             end: "top 50%",
-            scrub: 1,
-            toggleActions: "play none none none",
+            toggleActions: "play reverse play reverse",
           },
         }
       );
@@ -66,21 +100,20 @@ const FAQ = () => {
   }, []);
 
   return (
-    <section id="faq" className="bg-gradient-to-b from-black via-gray-900 to-gray-800 py-16 text-white">
+    <section
+      id="faq"
+      className="bg-gradient-to-b from-black via-gray-900 to-gray-800 py-16 text-white"
+    >
       <div className="text-center mb-12">
-        <motion.h2
+        <h2
           className="text-4xl font-bold"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          ref={titleRef}
         >
           Got Questions? NextGen Got Answers...
-        </motion.h2>
-        <motion.p
+        </h2>
+        <p
           className="mt-4 text-lg"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.5, ease: "easeInOut" }}
+          ref={descriptionRef}
         >
           Have further questions about enrollment?{" "}
           <a
@@ -89,7 +122,7 @@ const FAQ = () => {
           >
             Reach out to us.
           </a>
-        </motion.p>
+        </p>
       </div>
 
       <div className="max-w-4xl mx-auto space-y-6">
@@ -112,7 +145,7 @@ const FAQ = () => {
               </span>
             </motion.button>
 
-            {/* Answer Section with Animation */}
+            {/* Answer Section */}
             {openIndex === index && (
               <motion.div
                 className="px-8 py-6 bg-gray-900 text-gray-100 text-lg leading-relaxed"

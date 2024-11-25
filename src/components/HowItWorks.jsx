@@ -2,8 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import steps from '../../public/assets/images/steps.jpg';
-import './style/HowItWorks.css'; 
-
+import './style/HowItWorks.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +12,7 @@ const HowItWorks = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    // Animate image
     gsap.fromTo(
       imageRef.current,
       { opacity: 0, scale: 0.8 },
@@ -26,10 +26,12 @@ const HowItWorks = () => {
           start: 'top bottom',
           end: 'top center',
           scrub: 1,
+          toggleActions: 'play reverse play reverse', // Reverse animation when scrolling up
         },
       }
     );
 
+    // Animate text
     textRefs.current.forEach((el, i) => {
       gsap.fromTo(
         el,
@@ -45,6 +47,7 @@ const HowItWorks = () => {
             start: 'top bottom',
             end: 'top center',
             scrub: 1,
+            toggleActions: 'play reverse play reverse', // Reverse animation when scrolling up
           },
         }
       );
@@ -92,7 +95,7 @@ const HowItWorks = () => {
         <div
           className="w-full lg:w-1/2 px-6 lg:pl-10 lg:pr-6 mt-10 lg:mt-0 space-y-12 hiw-content"
         >
-          {[ 
+          {[
             {
               title: 'Step 1: Sign Up For Free',
               description:
