@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,8 +9,32 @@ const Testimonial = () => {
   const cardRefs = useRef([]);
   const containerRef = useRef(null);
 
+  // State for countdown timer
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 6,
+    minutes: 28,
+    seconds: 6,
+  });
+
+  // Countdown timer logic
   useEffect(() => {
-    // Animate cards on scroll
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        const { hours, minutes, seconds } = prevTime;
+        if (seconds > 0) return { ...prevTime, seconds: seconds - 1 };
+        if (minutes > 0)
+          return { hours, minutes: minutes - 1, seconds: 59 };
+        if (hours > 0) return { hours: hours - 1, minutes: 59, seconds: 59 };
+        clearInterval(timer);
+        return { hours: 0, minutes: 0, seconds: 0 };
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    // Animate testimonial cards on scroll
     cardRefs.current.forEach((card) => {
       gsap.fromTo(
         card,
@@ -52,45 +76,140 @@ const Testimonial = () => {
   ];
 
   return (
-    <div
-    id="testimonials"
-      ref={containerRef}
-      className="bg-black text-white py-20 px-8 lg:px-24 overflow-hidden"
-    >
-      <div className="text-center mb-16">
-        <h1 className="text-5xl font-extrabold mb-6">Transformative Credit Results</h1>
-        <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-          Real stories from people who improved their credit scores and took control of their financial futures.
-        </p>
-      </div>
+    <div>
+     
+      {/* Testimonials Section */}
+      <div
+        id="testimonials"
+        ref={containerRef}
+        className="bg-black text-white py-20 px-8 lg:px-24 overflow-hidden"
+      >
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-extrabold mb-6">
+            Transformative Credit Results
+          </h1>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+            Real stories from people who improved their credit scores and took
+            control of their financial futures.
+          </p>
+        </div>
 
-      <div className="space-y-12">
-        {testimonials.map((testimonial, index) => (
-          <motion.div
-            key={index}
-            ref={(el) => (cardRefs.current[index] = el)}
-            className="relative bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 rounded-xl shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center lg:items-stretch"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <img
-              src={testimonial.image}
-              alt={testimonial.title}
-              className="w-full lg:w-1/2 h-96 object-cover"
-            />
-            <div className="p-8 lg:p-12 flex flex-col justify-center text-center lg:text-left">
-              <h3 className="text-3xl font-bold mb-4">{testimonial.title}</h3>
-              <p className="text-lg text-white italic mb-6">
-                {testimonial.description}
-              </p>
-              <button className="btn">
-                Learn More
-              </button>
-            </div>
-          </motion.div>
-        ))}
+        <div className="space-y-12">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              ref={(el) => (cardRefs.current[index] = el)}
+              className="relative bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 rounded-xl shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center lg:items-stretch"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img
+                src={testimonial.image}
+                alt={testimonial.title}
+                className="w-full lg:w-1/2 h-96 object-cover"
+              />
+              <div className="p-8 lg:p-12 flex flex-col justify-center text-center lg:text-left">
+                <h3 className="text-3xl font-bold mb-4">{testimonial.title}</h3>
+                <p className="text-lg text-white italic mb-6">
+                  {testimonial.description}
+                </p>
+                <button className="btn">Learn More</button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
+       {/* Credit Repair Offer Section */}
+       <div className="bg-black text-white text-center py-12 px-4">
+        <h1 className="text-2xl font-bold mb-4">
+          Total Value: <span className="text-yellow-500">$3,788</span>
+        </h1>
+        <h2 className="text-3xl font-extrabold mb-8">
+          Repair Multiple Peoples Credit Starting At Just{" "}
+          <span className="text-yellow-500">$147/mo</span>
+        </h2>
+        <motion.button
+            type="submit"
+            className="glowing-button w-auto px-6 py-3 rounded-lg font-bold text-lg transition-colors relative"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            >
+            JOIN 12,300+ USERS
+        </motion.button>
+
+        <div className="flex justify-center items-center mt-6 space-x-2">
+          {Array.from({ length: 15 }).map((_, i) => (
+            <img
+              key={i}
+              src={`/path-to-user-image-${i}.png`} // Replace with actual image paths
+              alt={`User ${i}`}
+              className="w-8 h-8 rounded-full border-2 border-gray-700"
+            />
+          ))}
+        </div>
+        <p className="text-gray-400 text-sm mt-6">
+          Price increases to <span className="text-yellow-500">$597/mo</span> in:
+        </p>
+        <div className="flex justify-center mt-4 space-x-4 text-center">
+          <div>
+            <p className="text-2xl font-bold">{timeLeft.hours}</p>
+            <p className="text-gray-400 text-sm">hours</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold">{timeLeft.minutes}</p>
+            <p className="text-gray-400 text-sm">minutes</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold">{timeLeft.seconds}</p>
+            <p className="text-gray-400 text-sm">seconds</p>
+          </div>
+        </div>
+      </div>
+       {/* Glowing Button CSS */}
+       <style jsx>{`
+        .glowing-button {
+          background-color: #ffd700;
+          color: #1a1a1a;
+          overflow: hidden;
+          z-index: 1;
+          transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+
+        .glowing-button:hover {
+          box-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ffd700;
+        }
+
+        .glowing-button::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(
+            circle,
+            rgba(255, 215, 0, 0.8) 10%,
+            rgba(255, 215, 0, 0) 60%
+          );
+          transform: translate(-50%, -50%);
+          z-index: 0;
+          filter: blur(30px);
+          opacity: 0;
+          transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .glowing-button:hover::before {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+
+        .glowing-button:focus {
+          outline: none;
+        }
+      `}</style>
+          <br/>
     </div>
+    
   );
 };
 

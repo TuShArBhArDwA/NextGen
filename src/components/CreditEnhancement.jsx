@@ -150,12 +150,65 @@ const CreditEnhancement = () => {
           repair software and start your journey today.
         </p>
         <motion.button
-          className="cta-button bg-yellow-400 text-black py-3 px-8 rounded-full font-bold text-lg hover:bg-yellow-500 transition-transform transform hover:scale-110"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Join 12,300+ People
+            type="submit"
+            className="glowing-button w-auto px-6 py-3 rounded-lg font-bold text-lg transition-colors relative"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            >
+            JOIN 12,300+ USERS
         </motion.button>
+         {/* Glowing Button CSS */}
+      <style jsx>{`
+        .glowing-button {
+          background-color: #ffd700;
+          color: #1a1a1a;
+          overflow: hidden;
+          z-index: 1;
+          transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+
+        .glowing-button:hover {
+          box-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ffd700;
+        }
+
+        .glowing-button::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(
+            circle,
+            rgba(255, 215, 0, 0.8) 10%,
+            rgba(255, 215, 0, 0) 60%
+          );
+          transform: translate(-50%, -50%);
+          z-index: 0;
+          filter: blur(30px);
+          opacity: 0;
+          transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .glowing-button:hover::before {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+
+        .glowing-button:focus {
+          outline: none;
+        }
+      `}</style>
+        <div className="flex justify-center items-center mt-6 space-x-2">
+          {Array.from({ length: 15 }).map((_, i) => (
+            <img
+              key={i}
+              src={`/path-to-user-image-${i}.png`} // Replace with actual image paths
+              alt={`User ${i}`}
+              className="w-8 h-8 rounded-full border-2 border-gray-700"
+            />
+          ))}
+          </div>
       </div>
     </div>
   );

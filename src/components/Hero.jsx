@@ -55,27 +55,16 @@ const Hero = () => {
         </div>
 
         <p>Loved by 12,300+</p>
-        
-        {/* <div class="flex items-center justify-center gap-3 bg-black py-4">
-  
-  <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-transparent hover:border-blue-500 transition-all">
-    <img src="image1.jpg" alt="Image 1" class="w-full h-full object-cover" />
-  </div>
-  <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-transparent hover:border-blue-500 transition-all">
-    <img src="image2.jpg" alt="Image 2" class="w-full h-full object-cover" />
-  </div>
-  <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-transparent hover:border-blue-500 transition-all">
-    <img src="image3.jpg" alt="Image 3" class="w-full h-ful l object-cover" />
-  </div>
-  <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-transparent hover:border-blue-500 transition-all">
-    <img src="image4.jpg" alt="Image 4" class="w-full h-full object-cover" />
-  </div>  
-  <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-transparent hover:border-blue-500 transition-all">
-    <img src="image5.jpg" alt="Image 5" class="w-full h-full object-cover" />
-  </div>
-</div> */}
-
-
+        <div className="flex justify-center items-center mt-6 space-x-2">
+          {Array.from({ length: 15 }).map((_, i) => (
+            <img
+              key={i}
+              src={`/path-to-user-image-${i}.png`} // Replace with actual image paths
+              alt={`User ${i}`}
+              className="w-8 h-8 rounded-full border-2 border-gray-700"
+            />
+          ))}
+          </div>
       </div>
     </section>
   )
