@@ -6,10 +6,11 @@ import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 const Hero = () => {
   const videoRef = useRef(null); // Reference to the video element
   const [isPlaying, setIsPlaying] = useState(false); // State to track play/pause
-  const [isMuted, setIsMuted] = useState(true); // State to track mute/unmute
+  const [isMuted, setIsMuted] = useState(false); // State to track mute/unmute, starting unmuted
 
   useGSAP(() => {
     gsap.to('.hero-title', { opacity: 1, delay: 2 });
+    gsap.to(videoRef.current, { opacity: 1, delay: 2 }); // Animate video opacity
     gsap.to('#cta', { opacity: 1, y: -50, delay: 2 });
   }, []);
 
@@ -67,17 +68,17 @@ const Hero = () => {
 
         {/* Video Section */}
         <div className="w-10/12 md:w-8/12 mt-6 relative">
-        <video
-        ref={videoRef}
-        className="w-full h-auto rounded-lg shadow-lg border-4 border-gray-800"
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source src="/assets/videos/intro.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+          <video
+            ref={videoRef}
+            className="w-full h-auto rounded-lg shadow-lg border-4 border-gray-800 opacity-0" // Start with opacity 0
+            autoPlay
+            muted={isMuted} // Start unmuted
+            loop
+            playsInline
+          >
+            <source src="/assets/videos/intro.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
           {/* Play/Pause and Mute/Unmute Controls */}
           <div className="absolute bottom-4 left-4 flex items-center space-x-4 z-10">
