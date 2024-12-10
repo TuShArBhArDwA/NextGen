@@ -67,17 +67,17 @@ const Hero = () => {
 
         {/* Video Section */}
         <div className="w-10/12 md:w-8/12 mt-6 relative">
-          <video
-            ref={videoRef}
-            className="w-full h-auto rounded-lg shadow-lg border-4 border-gray-800"
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src="../../public/assets/videos/intro.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <video
+        ref={videoRef}
+        className="w-full h-auto rounded-lg shadow-lg border-4 border-gray-800"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src="/assets/videos/intro.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
           {/* Play/Pause and Mute/Unmute Controls */}
           <div className="absolute bottom-4 left-4 flex items-center space-x-4 z-10">
