@@ -113,7 +113,7 @@ const Hero = () => {
         >
           STARTING AT ONLY $147/MO
         </a>
-        <p className="mt-4 text-xl text-gray-300">FIX YOUR CREDIT ISSUES FAST</p>
+        <p className="font-normal text-xl">FIX YOUR CREDIT ISSUES FAST</p>
 
         {/* Star Ratings */}
         <div className="flex items-center justify-center gap-1 mt-4">
