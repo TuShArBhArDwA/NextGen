@@ -91,16 +91,24 @@ const CreditEnhancement = () => {
         ref={showcaseRef}
       >
         <motion.img
-          src="https://via.placeholder.com/800x400"
-          alt="Credit Enhancement Showcase"
-          className="showcase-image max-w-full rounded-lg shadow-2xl"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          onError={(e) => {
-            e.target.src =
-              "https://via.placeholder.com/800x400/444/fff?text=Image+Unavailable";
-          }}
-        />
+  src="../../public/assets/images/credit-score.webp"
+  alt="Credit Enhancement Showcase"
+  className="showcase-image max-w-full rounded-lg shadow-lg"
+  style={{
+    objectFit: "cover",
+    width: "80%", // Adjusts width to a percentage for responsiveness
+    maxWidth: "700px", // Limits the maximum size
+    height: "auto", // Maintains aspect ratio
+    border: "2px solid rgba(255, 255, 255, 0.1)", // Adds a subtle border
+    transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+  }}
+  whileHover={{ scale: 1.05 }}
+  transition={{ duration: 0.3, ease: "easeInOut" }}
+  onError={(e) => {
+    e.target.src =
+      "https://via.placeholder.com/800x400/444/fff?text=Image+Unavailable";
+  }}
+/>
       </div>
 
       {/* Features Section */}
