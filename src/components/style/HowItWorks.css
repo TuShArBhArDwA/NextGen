@@ -1,13 +1,54 @@
+/* Parent container for the How It Works section */
+.hiw-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: #000; /* Black background */
+}
+
+/* Image container takes up 50% of the width */
+.hiw-image-container {
+  flex: 1 1 50%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 50% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Style for the image */
+.hiw-image-container img {
+  max-width: 90%; /* Ensure the image doesn't overflow */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded edges */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for the image */
+.hiw-image-container img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0px 12px 24px rgba(255, 255, 255, 0.2); /* Glow effect */
+}
+
+/* Text container takes up 50% of the width */
 .hiw-content {
-    margin-right: 10%; /* Increase this to push content to the left */
-    word-wrap: break-word;
-    max-width: 90%; /* Controls the width at which the text breaks */
-  }
-  
-  .hiw-title,
-  .hiw-subtitle,
-  .hiw-text {
-    word-wrap: break-word;
-    max-width: 90%; /* Ensure text doesn't overflow */
-  }
-  
+  flex: 1 1 50%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 50% */
+  padding: 16px;
+  box-sizing: border-box;
+  color: #fff; /* White text */
+}
+
+/* Styling for each step's title and description */
+.hiw-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.hiw-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+}

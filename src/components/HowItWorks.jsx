@@ -26,7 +26,7 @@ const HowItWorks = () => {
           start: 'top bottom',
           end: 'top center',
           scrub: 1,
-          toggleActions: 'play reverse play reverse', // Reverse animation when scrolling up
+          toggleActions: 'play reverse play reverse',
         },
       }
     );
@@ -47,7 +47,7 @@ const HowItWorks = () => {
             start: 'top bottom',
             end: 'top center',
             scrub: 1,
-            toggleActions: 'play reverse play reverse', // Reverse animation when scrolling up
+            toggleActions: 'play reverse play reverse',
           },
         }
       );
@@ -82,14 +82,11 @@ const HowItWorks = () => {
         </p>
       </div>
       <div className="flex flex-col lg:flex-row items-center bg-black py-16">
-        <div
-          className="w-full lg:w-1/2 flex justify-center"
-          ref={imageRef}
-        >
+        <div className="hiw-image-container" ref={imageRef}>
           <img
             src={card3d}
             alt="How It Works"
-            className="max-w-md w-full rounded-lg shadow-xl"
+            className="hiw-image"
           />
         </div>
         <div
