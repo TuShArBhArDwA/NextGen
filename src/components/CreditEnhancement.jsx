@@ -90,16 +90,16 @@ const CreditEnhancement = () => {
         className="visual mb-16 flex justify-center"
         ref={showcaseRef}
       >
-        <motion.img
-  src="../../public/assets/images/credit-score.jpg"
+      <motion.img
+  src="/assets/images/credit-score.jpg"
   alt="Credit Enhancement Showcase"
   className="showcase-image max-w-full rounded-lg shadow-lg"
   style={{
     objectFit: "cover",
-    width: "80%", // Adjusts width to a percentage for responsiveness
-    maxWidth: "700px", // Limits the maximum size
-    height: "auto", // Maintains aspect ratio
-    border: "2px solid rgba(255, 255, 255, 0.1)", // Adds a subtle border
+    width: "80%",
+    maxWidth: "700px",
+    height: "auto",
+    border: "2px solid rgba(255, 255, 255, 0.1)",
     transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
   }}
   whileHover={{ scale: 1.05 }}
@@ -109,6 +109,7 @@ const CreditEnhancement = () => {
       "https://via.placeholder.com/800x400/444/fff?text=Image+Unavailable";
   }}
 />
+
       </div>
 
       {/* Features Section */}
