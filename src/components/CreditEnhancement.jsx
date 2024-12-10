@@ -91,7 +91,7 @@ const CreditEnhancement = () => {
         ref={showcaseRef}
       >
         <motion.img
-  src="../../public/assets/images/credit-score.webp"
+  src="../../public/assets/images/credit-score.jpg"
   alt="Credit Enhancement Showcase"
   className="showcase-image max-w-full rounded-lg shadow-lg"
   style={{
