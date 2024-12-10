@@ -2,7 +2,9 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import check1 from "../../public/assets/images/check1.png";
+import check2 from "../../public/assets/images/check2.png";
+import check3 from "../../public/assets/images/check3.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Testimonial = () => {
@@ -59,19 +61,19 @@ const Testimonial = () => {
       title: "170+ Point Increase",
       description:
         "“Using this software, my credit score improved by over 170 points in just a few months. It's life-changing!”",
-      image: "/path-to-your-first-image.png",
+      image: check2,
     },
     {
       title: "Bankruptcy Deleted",
       description:
         "“I never thought it would be possible to remove two bankruptcies from my credit report, but it happened!”",
-      image: "/path-to-your-second-image.png",
+      image: check3,
     },
     {
       title: "153+ Point Increase",
       description:
         "“In just one round of disputes, over $65K of debt was removed from my report. Unbelievable results!”",
-      image: "/path-to-your-third-image.png",
+      image: check1,
     },
   ];
 

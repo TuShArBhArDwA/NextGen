@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import steps from '../../public/assets/images/steps.jpg';
+import card3d from '../../public/assets/images/card3d.png';
 import './style/HowItWorks.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -87,7 +87,7 @@ const HowItWorks = () => {
           ref={imageRef}
         >
           <img
-            src={steps}
+            src={card3d}
             alt="How It Works"
             className="max-w-md w-full rounded-lg shadow-xl"
           />
