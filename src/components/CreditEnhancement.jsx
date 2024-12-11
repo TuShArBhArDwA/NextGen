@@ -164,7 +164,7 @@ const CreditEnhancement = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             >
-            JOIN 12,300+ USERS
+            JOIN 15,777+ USERS
         </motion.button>
          {/* Glowing Button CSS */}
       <style jsx>{`

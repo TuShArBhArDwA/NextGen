@@ -101,7 +101,7 @@ const Testimonial = () => {
           <span className="text-yellow-500">$147/mo</span>
         </h2>
         <button className="glowing-button w-auto px-6 py-3 rounded-lg font-bold text-lg transition-colors relative">
-          JOIN 12,300+ USERS
+          JOIN 15,777+ USERS
         </button>
 
         <div className="flex justify-center items-center mt-6 space-x-2">
