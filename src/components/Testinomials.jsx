@@ -138,16 +138,15 @@ const Testimonial = () => {
             >
             JOIN 12,300+ USERS
         </motion.button>
-
         <div className="flex justify-center items-center mt-6 space-x-2">
-          {Array.from({ length: 15 }).map((_, i) => (
-            <img
-              key={i}
-              src={`/path-to-user-image-${i}.png`} // Replace with actual image paths
-              alt={`User ${i}`}
-              className="w-8 h-8 rounded-full border-2 border-gray-700"
-            />
-          ))}
+        {['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10'].map((name, i) => (
+          <img
+            key={i}
+            src={`/assets/images/${name}.png`}
+            alt={`User ${name}`}
+            className="w-8 h-8 rounded-full border-2 border-gray-700"
+          />
+        ))}
         </div>
         <p className="text-gray-400 text-sm mt-6">
           Price increases to <span className="text-yellow-500">$597/mo</span> in:
