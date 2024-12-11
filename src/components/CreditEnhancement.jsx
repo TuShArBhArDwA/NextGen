@@ -77,7 +77,7 @@ const CreditEnhancement = () => {
         className="text-center mb-12"
         ref={(el) => sectionsRef.current.push(el)}
       >
-        <h1 className="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+        <h1 className="text-4xl lg:text-5xl font-extrabold mb-4 leading-tight mt-40">
           Transform Your Credit: The Ultimate AI-Powered Enhancement Journey
         </h1>
         <p className="text-gray-400 text-lg">
