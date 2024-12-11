@@ -1,14 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import check1 from "../../public/assets/images/check1.png";
 import check2 from "../../public/assets/images/check2.png";
 import check3 from "../../public/assets/images/check3.png";
-gsap.registerPlugin(ScrollTrigger);
 
 const Testimonial = () => {
-  const cardRefs = useRef([]);
   const containerRef = useRef(null);
 
   // State for countdown timer
@@ -35,27 +30,6 @@ const Testimonial = () => {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    // Animate testimonial cards on scroll
-    cardRefs.current.forEach((card) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-  }, []);
-
   const testimonials = [
     {
       title: "170+ Point Increase",
@@ -79,7 +53,6 @@ const Testimonial = () => {
 
   return (
     <div>
-     
       {/* Testimonials Section */}
       <div
         id="testimonials"
@@ -98,12 +71,9 @@ const Testimonial = () => {
 
         <div className="space-y-12">
           {testimonials.map((testimonial, index) => (
-            <motion.div
+            <div
               key={index}
-              ref={(el) => (cardRefs.current[index] = el)}
               className="relative bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 rounded-xl shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center lg:items-stretch"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
             >
               <img
                 src={testimonial.image}
@@ -117,12 +87,12 @@ const Testimonial = () => {
                 </p>
                 <button className="btn">Learn More</button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-       {/* Credit Repair Offer Section */}
-       <div className="bg-black text-white text-center py-12 px-4">
+      {/* Credit Repair Offer Section */}
+      <div className="bg-black text-white text-center py-12 px-4">
         <h1 className="text-2xl font-bold mb-4">
           Total Value: <span className="text-yellow-500">$3,788</span>
         </h1>
@@ -130,23 +100,19 @@ const Testimonial = () => {
           Repair Multiple Peoples Credit Starting At Just{" "}
           <span className="text-yellow-500">$147/mo</span>
         </h2>
-        <motion.button
-            type="submit"
-            className="glowing-button w-auto px-6 py-3 rounded-lg font-bold text-lg transition-colors relative"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            >
-            JOIN 12,300+ USERS
-        </motion.button>
+        <button className="glowing-button w-auto px-6 py-3 rounded-lg font-bold text-lg transition-colors relative">
+          JOIN 12,300+ USERS
+        </button>
+
         <div className="flex justify-center items-center mt-6 space-x-2">
-        {['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10'].map((name, i) => (
-          <img
-            key={i}
-            src={`/assets/images/${name}.png`}
-            alt={`User ${name}`}
-            className="w-8 h-8 rounded-full border-2 border-gray-700"
-          />
-        ))}
+          {['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10','t11','t12','t13'].map((name, i) => (
+            <img
+              key={i}
+              src={`/assets/images/${name}.png`}
+              alt={`User ${name}`}
+              className="w-8 h-8 rounded-full border-2 border-gray-700"
+            />
+          ))}
         </div>
         <p className="text-gray-400 text-sm mt-6">
           Price increases to <span className="text-yellow-500">$597/mo</span> in:
@@ -166,8 +132,8 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-       {/* Glowing Button CSS */}
-       <style jsx>{`
+      {/* Glowing Button CSS */}
+      <style jsx>{`
         .glowing-button {
           background-color: #ffd700;
           color: #1a1a1a;
@@ -208,9 +174,8 @@ const Testimonial = () => {
           outline: none;
         }
       `}</style>
-          <br/>
+      <br />
     </div>
-    
   );
 };
 

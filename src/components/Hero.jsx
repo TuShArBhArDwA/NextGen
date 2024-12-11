@@ -118,7 +118,7 @@ const Hero = () => {
         <p className="mt-2 text-gray-400 text-sm">Loved by 12,300+</p>
         {/* User Images */}
         <div className="flex justify-center items-center mt-6 flex-wrap gap-3">
-        {['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10'].map((name, i) => (
+        {['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10','t11','t12','t13'].map((name, i) => (
           <img
             key={i}
             src={`/assets/images/${name}.png`}
