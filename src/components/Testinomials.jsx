@@ -104,16 +104,16 @@ const Testimonial = () => {
           JOIN 15,777+ USERS
         </button>
 
-        <div className="flex justify-center items-center mt-6 space-x-2">
-          {['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10','t11','t12','t13'].map((name, i) => (
-            <img
-              key={i}
-              src={`/assets/images/${name}.png`}
-              alt={`User ${name}`}
-              className="w-8 h-8 rounded-full border-2 border-gray-700"
-            />
-          ))}
-        </div>
+        <div className="flex justify-center items-center mt-6 flex-wrap gap-1">
+  {['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13'].map((name, i) => (
+    <img
+      key={i}
+      src={`/assets/images/${name}.png`}
+      alt={`User ${name}`}
+      className="w-8 h-8 rounded-full border-2 border-gray-700"
+    />
+  ))}
+</div>
         <p className="text-gray-400 text-sm mt-6">
           Price increases to <span className="text-yellow-500">$597/mo</span> in:
         </p>
