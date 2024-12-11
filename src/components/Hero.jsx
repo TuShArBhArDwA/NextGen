@@ -5,6 +5,7 @@ import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 
 const Hero = () => {
   const videoRef = useRef(null);
+  const userImagesRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
 
@@ -12,6 +13,21 @@ const Hero = () => {
     gsap.to('.hero-title', { opacity: 1, delay: 2 });
     gsap.to(videoRef.current, { opacity: 1, delay: 2 });
     gsap.to('#cta', { opacity: 1, y: -50, delay: 2 });
+    
+    // Slideshow animation for user images
+    const totalImages = 13; // Update this based on the number of user images
+    const imageWidth = 40; // Adjust based on your image size
+    const totalWidth = totalImages * imageWidth;
+    
+    gsap.to(userImagesRef.current, {
+      x: `-${totalWidth}px`,
+      duration: 10,
+      ease: "linear",
+      repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize((x) => parseFloat(x) % (totalWidth)),
+      },
+    });
   }, []);
 
   useEffect(() => {
@@ -117,16 +133,21 @@ const Hero = () => {
         </div>
         <p className="mt-2 text-gray-400 text-sm">Loved by 15,777+</p>
         {/* User Images */}
-        <div className="flex justify-center items-center mt-6 flex-wrap gap-1">
-  {['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13'].map((name, i) => (
-    <img
-      key={i}
-      src={`/assets/images/${name}.png`}
-      alt={`User ${name}`}
-      className="w-8 h-8 rounded-full border-2 border-gray-700"
-    />
-  ))}
-</div>
+        <div
+          className="flex justify-center items-center mt-6 overflow-hidden"
+          ref={userImagesRef}
+        >
+          <div className="flex space-x-1">
+            {['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13'].map((name, i) => (
+              <img
+                key={i}
+                src={`/assets/images/${name}.png`}
+                alt={`User ${name}`}
+                className="w-8 h-8 rounded-full border-2 border-gray-700"
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
