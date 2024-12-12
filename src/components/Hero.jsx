@@ -71,7 +71,7 @@ const Hero = () => {
       <div className="h-5/6 w-full flex-center flex-col text-center px-4">
         {/* Titles */}
         <p className="hero-title text-3xl md:text-5xl text-white font-bold mt-40">
-        NEUTRAL CREDIT OPTIMIZER
+        NextGen <br/><br/>NEUTRAL CREDIT OPTIMIZER
         </p>
         <p className="hero-title text-xl md:text-2xl text-gray-300 mt-4">
         Transform Your Credit Score with the Precision of Artificial Intelligence
