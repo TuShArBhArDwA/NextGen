@@ -117,21 +117,21 @@ const CreditEnhancement = () => {
         {[
           {
             icon: "🤖",
-            title: "Automated Credit Assessment",
+            title: "Automated Credit Analysis for Quick, Accurate Insights",
             description:
-              "Negative and inaccurate items are automatically identified.",
+              "Automatically Detecting Negative Entries and Inaccuracies",
           },
           {
             icon: "📄",
-            title: "Personalized Next Gen Letters",
+            title: "Next-Gen Customized Letters for Precise Results",
             description:
-              "Avoid using generic templates. The software generates dispute letters.",
+              "Eliminate Generic Templates – The Software Customizes Dispute Letters for You",
           },
           {
             icon: "💰",
-            title: "Increased Revenue Streams",
+            title: "Expanded Opportunities for Generating Additional Revenue",
             description:
-              "Generate income with a single subscription that provides credit repair services for both you and a friend or family member.",
+              "Unlock the Opportunity to Earn with a Single Subscription—Fix Your Credit and Help Family or Friends Improve Theirs.",
           },
         ].map((feature, index) => (
           <motion.div
