@@ -7,11 +7,11 @@ const Hero = () => {
   const videoRef = useRef(null);
   const userImagesRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   useGSAP(() => {
     gsap.to('.hero-title', { opacity: 1, delay: 2 });
-    gsap.to(videoRef.current, { opacity: 1, delay: 2 });
+    gsap.to(videoRef.current, { opacity: 1, delay: 0 });
     gsap.to('#cta', { opacity: 1, y: -50, delay: 2 });
     
     // Slideshow animation for user images
@@ -74,21 +74,20 @@ const Hero = () => {
         NEUTRAL CREDIT OPTIMIZER
         </p>
         <p className="hero-title text-xl md:text-2xl text-gray-300 mt-4">
-          Elevate Your Credit Score with the Power of Ai
+        Transform Your Credit Score with the Precision of Artificial Intelligence
         </p>
         {/* Video Section */}
         <div className="w-full md:w-8/12 mt-10 relative">
           <video
             ref={videoRef}
             className="w-full h-auto rounded-lg shadow-lg border-4 border-gray-800 opacity-0"
-            autoPlay
-            muted={isMuted}
-            loop
-            playsInline
+            muted autoPlay loop playsInline
           >
-            <source src="/assets/videos/intro.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <source src="/assets/videos/intro.mp4" type="video/mp4" />
+          <source src="/assets/videos/intro.webm" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+
           {/* Video Controls */}
           <div className="absolute bottom-4 left-4 flex items-center space-x-4 z-10">
             <button
