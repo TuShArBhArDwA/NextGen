@@ -29,6 +29,13 @@ const VideoCarousel = () => {
       transform: `translateX(${-100 * videoId}%)`,
       duration: 2,
       ease: "power2.inOut",
+      // Ensure that it doesn't move off the screen on mobile devices
+      onStart: () => {
+        const viewportWidth = window.innerWidth;
+        if (viewportWidth <= 760) {
+          gsap.set("#slider", { transform: `translateX(${-100 * videoId * 0.9}%)` }); // Reduce movement on small screens
+        }
+      },
     });
 
     // video animation to play the video when it is in the view
