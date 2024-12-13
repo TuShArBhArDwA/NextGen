@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import HowItWorks from './components/HowItWorks';
+import Highlights from './components/Highlights';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 import Pricing from './components/Pricing';
@@ -13,7 +13,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <CreditEnhancement/>
-      <HowItWorks />
+      <Highlights/>
       <Pricing/>
       <Testimonial/>
       <FAQ/>
