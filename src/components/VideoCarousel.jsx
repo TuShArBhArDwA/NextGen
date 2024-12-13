@@ -12,7 +12,6 @@ const VideoCarousel = () => {
   const videoSpanRef = useRef([]);
   const videoDivRef = useRef([]);
 
-  // video and indicator
   const [video, setVideo] = useState({
     isEnd: false,
     startPlay: false,
@@ -29,7 +28,7 @@ const VideoCarousel = () => {
     gsap.to("#slider", {
       transform: `translateX(${-100 * videoId}%)`,
       duration: 2,
-      ease: "power2.inOut", // show visualizer https://gsap.com/docs/v3/Eases
+      ease: "power2.inOut",
     });
 
     // video animation to play the video when it is in the view
@@ -37,6 +36,8 @@ const VideoCarousel = () => {
       scrollTrigger: {
         trigger: "#video",
         toggleActions: "restart none none none",
+        start: "top 70%", // Adjust scroll trigger based on screen size
+        end: "bottom 30%", // Adjust scroll trigger based on screen size
       },
       onComplete: () => {
         setVideo((pre) => ({
@@ -59,17 +60,15 @@ const VideoCarousel = () => {
           // get the progress of the video
           const progress = Math.ceil(anim.progress() * 100);
 
-          if (progress != currentProgress) {
+          if (progress !== currentProgress) {
             currentProgress = progress;
 
-            // set the width of the progress bar
+            // set the width of the progress bar based on screen size
+            const progressWidth =
+              window.innerWidth < 760 ? "10vw" : window.innerWidth < 1200 ? "10vw" : "4vw";
+
             gsap.to(videoDivRef.current[videoId], {
-              width:
-                window.innerWidth < 760
-                  ? "10vw" // mobile
-                  : window.innerWidth < 1200
-                  ? "10vw" // tablet
-                  : "4vw", // laptop
+              width: progressWidth, // Adjust progress bar width
             });
 
             // set the background color of the progress bar
@@ -80,7 +79,6 @@ const VideoCarousel = () => {
           }
         },
 
-        // when the video is ended, replace the progress bar with the indicator and change the background color
         onComplete: () => {
           if (isPlaying) {
             gsap.to(videoDivRef.current[videoId], {
@@ -93,15 +91,14 @@ const VideoCarousel = () => {
         },
       });
 
-      if (videoId == 0) {
+      if (videoId === 0) {
         anim.restart();
       }
 
       // update the progress bar
       const animUpdate = () => {
         anim.progress(
-          videoRef.current[videoId].currentTime /
-            hightlightsSlides[videoId].videoDuration
+          videoRef.current[videoId].currentTime / hightlightsSlides[videoId].videoDuration
         );
       };
 
@@ -125,7 +122,6 @@ const VideoCarousel = () => {
     }
   }, [startPlay, videoId, isPlaying, loadedData]);
 
-  // vd id is the id for every video until id becomes number 3
   const handleProcess = (type, i) => {
     switch (type) {
       case "video-end":
