@@ -29,11 +29,12 @@ const VideoCarousel = () => {
       transform: `translateX(${-100 * videoId}%)`,
       duration: 2,
       ease: "power2.inOut",
-      // Ensure that it doesn't move off the screen on mobile devices
+      // Adjusting the slider translation for small screens
       onStart: () => {
         const viewportWidth = window.innerWidth;
         if (viewportWidth <= 760) {
-          gsap.set("#slider", { transform: `translateX(${-100 * videoId * 0.9}%)` }); // Reduce movement on small screens
+          // Adjust the translation for smaller screens to avoid it merging with the left edge
+          gsap.set("#slider", { transform: `translateX(${-100 * videoId * 0.8}%)` });
         }
       },
     });
