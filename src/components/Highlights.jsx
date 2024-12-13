@@ -13,7 +13,7 @@ const Highlights = () => {
   return (
     <section id="how-it-works" className="w-screen overflow-hidden h-full common-padding bg-black">
       <div className="screen-max-width">
-        <div className="mb-12 w-full md:flex items-end justify-between">
+        <div className="mb-12 w-full md:flex items-end justify-center">
           <h1 id="title" className="section-heading">How It Works</h1>
         </div>
 
