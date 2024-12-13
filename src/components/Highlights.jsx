@@ -12,7 +12,7 @@ const Highlights = () => {
 
   return (
     <section
-      id="highlights"
+      id="how-it-works"
       className="w-screen overflow-hidden h-full common-padding bg-black flex items-center justify-center" // Added flex for centering
     >
       <div className="screen-max-width text-center"> {/* Ensures text is centered */}
