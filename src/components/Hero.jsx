@@ -63,13 +63,16 @@ const Hero = () => {
         </p>
 
         {/* Video Section */}
-        <div className="w-full md:w-8/12 mt-10 flex justify-center">
-          <ReactPlayer 
-            controls 
-            url='https://youtu.be/1OAjeECW90E?si=lUqtgv9J7DFtqHrt'
-            width="100%" 
-            height="480px" // Adjust this value as needed for your design
-          />
+        <div className="w-full md:w-8/12 mt-6 sm:mt-10 flex justify-center">
+          <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+            <ReactPlayer
+              controls
+              url="https://youtu.be/1OAjeECW90E?si=lUqtgv9J7DFtqHrt"
+              width="100%"
+              height="100%"
+              className="rounded-lg"
+            />
+          </div>
         </div>
       </div>
 
