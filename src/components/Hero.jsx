@@ -67,7 +67,7 @@ const Hero = () => {
           <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
             <ReactPlayer
               controls
-              url="https://youtu.be/1OAjeECW90E?si=lUqtgv9J7DFtqHrt"
+              url="https://youtu.be/-qFpZQAZDdo"
               width="100%"
               height="100%"
               className="rounded-lg"
