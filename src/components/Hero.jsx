@@ -68,7 +68,7 @@ const Hero = () => {
             controls 
             url='https://youtu.be/1OAjeECW90E?si=lUqtgv9J7DFtqHrt'
             width="100%" 
-            height="480px" // Retaining the original height
+            height="480px"  // Adjust this value as needed for your design
           />
         </div>
       </div>
