@@ -55,7 +55,7 @@ const Hero = () => {
     <section className="w-full nav-height bg-black relative">
       <div className="h-5/6 w-full flex-center flex-col text-center px-4">
         {/* Titles */}
-        <p className="hero-title text-3xl md:text-5xl text-white font-bold mt-40">
+        <p className="hero-title text-3xl md:text-5xl text-white font-bold mt-40 md:mt-24">
           NextGen <br />NEUTRAL CREDIT OPTIMIZER
         </p>
         <p className="hero-title text-xl md:text-2xl text-gray-300 mt-4">
@@ -68,7 +68,7 @@ const Hero = () => {
             controls 
             url='https://youtu.be/1OAjeECW90E?si=lUqtgv9J7DFtqHrt'
             width="100%" 
-            height="480px"  // Adjust this value as needed for your design
+            height="480px" // Adjust this value as needed for your design
           />
         </div>
       </div>
