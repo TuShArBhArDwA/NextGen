@@ -55,7 +55,9 @@ Explore the future of technology with **NextGen** and become a part of a transfo
 ### Prerequisites  
 
 - **Node.js**: v16.14.0 or higher  
-- **npm** or **yarn** for dependency management  
+- **npm** or **yarn** for dependency management
+
+---
 
 ### Installation  
 
@@ -73,12 +75,14 @@ Explore the future of technology with **NextGen** and become a part of a transfo
    ```bash
    http://localhost:3000
 
+---
 ## Usage
 - Explore the dashboard to access all features.
 - Customize settings based on your requirements.
 - Integrate APIs or third-party services for extended functionalities.
 - Deploy the application using Vercel or any preferred hosting provider.
 
+---
 ## Contributing
 Contributions are always welcome! To get started:
 
@@ -96,8 +100,11 @@ Contributions are always welcome! To get started:
    git push origin feature-name
 5. Submit a pull request detailing your changes.
 
+---
 ## License
 This project is licensed under the MIT License. Feel free to use, modify, and distribute the code within the scope of the license.
+
+---
 ## Acknowledgements
 Special thanks to:
 
