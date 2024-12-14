@@ -1,13 +1,10 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { useEffect, useState, useRef } from 'react';
-import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
+import { useRef } from 'react';
+import ReactPlayer from 'react-player';
 
 const Hero = () => {
-  const videoRef = useRef(null);
   const userImagesRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
 
   useGSAP(() => {
     // Title animations
@@ -54,42 +51,6 @@ const Hero = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      const checkVideoPlaying = () => {
-        setIsPlaying(!videoRef.current.paused);
-      };
-
-      checkVideoPlaying();
-
-      videoRef.current.addEventListener('play', checkVideoPlaying);
-      videoRef.current.addEventListener('pause', checkVideoPlaying);
-
-      return () => {
-        videoRef.current.removeEventListener('play', checkVideoPlaying);
-        videoRef.current.removeEventListener('pause', checkVideoPlaying);
-      };
-    }
-  }, []);
-
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying((prev) => !prev);
-    }
-  };
-
-  const toggleMuteUnmute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted((prev) => !prev);
-    }
-  };
-
   return (
     <section className="w-full nav-height bg-black relative">
       <div className="h-5/6 w-full flex-center flex-col text-center px-4">
@@ -102,37 +63,13 @@ const Hero = () => {
         </p>
 
         {/* Video Section */}
-        <div className="w-full md:w-8/12 mt-10 relative">
-          <video
-            ref={videoRef}
-            className="w-full h-auto rounded-lg shadow-lg border-4 border-gray-800 opacity-1"
-            muted
-            autoPlay
-            loop
-            playsInline
-          >
-            <source src="/assets/videos/intro.mp4" type="video/mp4" />
-            <source src="/assets/videos/intro.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
-
-          {/* Video Controls */}
-          <div className="absolute bottom-4 left-4 flex items-center space-x-4 z-10">
-            <button
-              onClick={togglePlayPause}
-              className="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 focus:ring-4 focus:ring-gray-500"
-              aria-label={isPlaying ? 'Pause Video' : 'Play Video'}
-            >
-              {isPlaying ? <FaPause size={18} /> : <FaPlay size={18} />}
-            </button>
-            <button
-              onClick={toggleMuteUnmute}
-              className="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 focus:ring-4 focus:ring-gray-500"
-              aria-label={isMuted ? 'Unmute Video' : 'Mute Video'}
-            >
-              {isMuted ? <FaVolumeMute size={18} /> : <FaVolumeUp size={18} />}
-            </button>
-          </div>
+        <div className="w-full md:w-8/12 mt-10 flex justify-center">
+          <ReactPlayer 
+            controls 
+            url='https://youtu.be/1OAjeECW90E?si=lUqtgv9J7DFtqHrt'
+            width="100%" 
+            height="480px"  // Adjust this value as needed for your design
+          />
         </div>
       </div>
 
