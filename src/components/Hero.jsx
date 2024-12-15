@@ -81,6 +81,7 @@ const Hero = () => {
         id="cta"
         className="flex flex-col items-center opacity-0 translate-y-20 mt-14 px-4 text-center"
       >
+        <br/>
         <a
           href="#highlights"
           className="btn bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-400"
