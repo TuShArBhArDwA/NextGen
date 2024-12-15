@@ -21,7 +21,7 @@ export const hightlightsSlides = [
   {
     id: 1,
     textLists: [
-      "Step 1: Sign Up For Free",
+      "Step 1: Register For Free",
       "Create a free account to",
       "start your credit repair journey",
     ],
