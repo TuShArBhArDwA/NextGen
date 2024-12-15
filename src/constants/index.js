@@ -42,7 +42,7 @@ export const hightlightsSlides = [
       "address your credit needs",
     ],
     video: highlightThirdVideo,
-    videoDuration: 2,
+    videoDuration: 4,
   },
   {
     id: 4,
