@@ -26,13 +26,13 @@ export const hightlightsSlides = [
       "start your credit repair journey",
     ],
     video: highlightFirstVideo,
-    videoDuration: 4,
+    videoDuration: 3,
   },
   {
     id: 2,
     textLists: ["Step 2: Examine Your Credit Report", "Use AI to analyze your credit","record and identify issues"],
     video: highlightSecondVideo,
-    videoDuration: 5,
+    videoDuration: 6,
   },
   {
     id: 3,
