@@ -48,6 +48,6 @@ export const hightlightsSlides = [
     id: 4,
     textLists: ["Step 4: Send Dispute Letters", "Utilize AI to draft and send","dispute letters to bureaus"],
     video: highlightFourthVideo,
-    videoDuration: 3.63,
+    videoDuration: 7,
   },
 ];
