@@ -51,6 +51,17 @@ const Testimonial = () => {
     },
   ];
 
+  // Slideshow Logic
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const slideTimer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 3000); // Auto slide every 3 seconds
+
+    return () => clearInterval(slideTimer);
+  }, [testimonials.length]);
+
   return (
     <div>
       {/* Testimonials Section */}
@@ -69,29 +80,58 @@ const Testimonial = () => {
           </p>
         </div>
 
-        <div className="space-y-12">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="relative bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 rounded-xl shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center lg:items-stretch"
-            >
-              <img
-                src={testimonial.image}
-                alt={testimonial.title}
-                className="w-full lg:w-1/2 h-96 object-cover"
-              />
-              <div className="p-8 lg:p-12 flex flex-col justify-center text-center lg:text-left">
-                <h3 className="text-3xl font-bold mb-4">{testimonial.title}</h3>
-                <p className="text-lg text-white italic mb-6">
-                  {testimonial.description}
-                </p>
-                <button className="btn">Learn More</button>
+        {/* Slideshow Container */}
+        <div className="relative w-full overflow-hidden">
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="min-w-full flex flex-col lg:flex-row items-center"
+              >
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.title}
+                  className="w-full lg:w-1/2 h-96 object-cover"
+                />
+                <div className="p-8 lg:p-12 flex flex-col justify-center text-center lg:text-left bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 rounded-xl shadow-2xl">
+                  <h3 className="text-3xl font-bold mb-4">{testimonial.title}</h3>
+                  <p className="text-lg text-white italic mb-6">
+                    {testimonial.description}
+                  </p>
+                  <button className="btn">Learn More</button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 p-2 rounded-full"
+            onClick={() =>
+              setCurrentIndex((prevIndex) =>
+                prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+              )
+            }
+          >
+            &#9664;
+          </button>
+          <button
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 p-2 rounded-full"
+            onClick={() =>
+              setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
+            }
+          >
+            &#9654;
+          </button>
         </div>
       </div>
-      {/* Credit Repair Offer Section */}
+
+      {/* Timer and Offer Section */}
       <div className="bg-black text-white text-center py-12 px-4">
         <h1 className="text-2xl font-bold mb-4">
           Total Value: <span className="text-yellow-500">$3,788</span>
@@ -103,20 +143,7 @@ const Testimonial = () => {
         <button className="glowing-button w-auto px-6 py-3 rounded-lg font-bold text-lg transition-colors relative">
           JOIN 15,777+ USERS
         </button>
-
-        <div className="flex justify-center items-center mt-6 flex-wrap gap-1">
-  {['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13'].map((name, i) => (
-    <img
-      key={i}
-      src={`/assets/images/${name}.png`}
-      alt={`User ${name}`}
-      className="w-8 h-8 rounded-full border-2 border-gray-700"
-    />
-  ))}
-</div>
-        <p className="text-gray-400 text-sm mt-6">
-          Price increases to <span className="text-yellow-500">$597/mo</span> in:
-        </p>
+        {/* Timer */}
         <div className="flex justify-center mt-4 space-x-4 text-center">
           <div>
             <p className="text-2xl font-bold">{timeLeft.hours}</p>
@@ -132,49 +159,6 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-      {/* Glowing Button CSS */}
-      <style jsx>{`
-        .glowing-button {
-          background-color: #ffd700;
-          color: #1a1a1a;
-          overflow: hidden;
-          z-index: 1;
-          transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-        }
-
-        .glowing-button:hover {
-          box-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ffd700;
-        }
-
-        .glowing-button::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 200%;
-          height: 200%;
-          background: radial-gradient(
-            circle,
-            rgba(255, 215, 0, 0.8) 10%,
-            rgba(255, 215, 0, 0) 60%
-          );
-          transform: translate(-50%, -50%);
-          z-index: 0;
-          filter: blur(30px);
-          opacity: 0;
-          transition: opacity 0.3s, transform 0.3s;
-        }
-
-        .glowing-button:hover::before {
-          opacity: 1;
-          transform: translate(0, 0);
-        }
-
-        .glowing-button:focus {
-          outline: none;
-        }
-      `}</style>
-      <br />
     </div>
   );
 };
