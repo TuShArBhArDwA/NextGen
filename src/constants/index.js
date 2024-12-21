@@ -25,7 +25,7 @@ export const hightlightsSlides = [
       "Create a free account to",
       "start your credit repair journey",
     ],
-    video: highlightFirstVideo,
+    video: highlightFirstVideo, 
     videoDuration: 3,
   },
   {
