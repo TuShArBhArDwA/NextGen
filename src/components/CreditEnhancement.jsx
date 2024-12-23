@@ -73,6 +73,20 @@ const CreditEnhancement = () => {
   return (
     <div id="home" className="credit-enhancement bg-black text-white py-16 px-6 lg:px-20">
       {/* Title Section */}
+      <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
       <div
         className="text-center mb-12"
         ref={(el) => sectionsRef.current.push(el)}

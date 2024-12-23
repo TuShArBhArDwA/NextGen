@@ -55,13 +55,25 @@ const Hero = () => {
     <section className="w-full nav-height bg-black relative">
       <div className="h-5/6 w-full flex-center flex-col text-center px-4">
         {/* Titles */}
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <p className="hero-title text-3xl md:text-5xl text-white font-bold mt-40 md:mt-24">
           NextGen <br />NEUTRAL CREDIT OPTIMIZER
         </p>
         <p className="hero-title text-xl md:text-2xl text-gray-300 mt-4">
           Transform Your Credit Score with the Precision of Artificial Intelligence
         </p>
-
+        <br/>
+        <br/>
         {/* Video Section */}
         <div className="w-full md:w-8/12 mt-6 sm:mt-10 flex justify-center">
           <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
@@ -81,6 +93,17 @@ const Hero = () => {
         id="cta"
         className="flex flex-col items-center opacity-0 translate-y-20 mt-14 px-4 text-center"
       >
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <br/>
         <a
           href="#highlights"
