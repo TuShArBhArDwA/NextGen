@@ -50,7 +50,6 @@ const Hero = () => {
         <div className="w-full md:w-8/12 mt-6 sm:mt-10 flex justify-center">
         <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
         <ReactPlayer
-              controls
               url="https://youtu.be/-qFpZQAZDdo"
               width="100%"
               height="100%"
