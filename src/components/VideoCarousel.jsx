@@ -148,7 +148,7 @@ const VideoCarousel = () => {
         {hightlightsSlides.map((list, i) => (
           <div key={list.id} id="slider" className="sm:pr-20 pr-10">
             <div className="video-carousel_container">
-              <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
+              <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black relative">
                 <video
                   id="video"
                   playsInline
@@ -170,14 +170,18 @@ const VideoCarousel = () => {
                 >
                   <source src={list.video} type="video/mp4" />
                 </video>
-              </div>
 
-              <div className="absolute top-12 left-[5%] z-10">
-                {list.textLists.map((text, i) => (
-                  <p key={i} className="md:text-2xl text-xl font-medium">
-                    {text}
-                  </p>
-                ))}
+                {/* Text overlay */}
+                <div className="absolute top-5 left-1/2 transform -translate-x-1/2 z-10 w-full text-center">
+                  {list.textLists.map((text, idx) => (
+                    <p
+                      key={idx}
+                      className="text-white md:text-2xl text-xl font-medium bg-black bg-opacity-60 px-4 py-2 rounded-lg inline-block"
+                    >
+                      {text}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

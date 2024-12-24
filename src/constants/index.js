@@ -21,34 +21,28 @@ export const hightlightsSlides = [
   {
     id: 1,
     textLists: [
-      "Step 1: Register For Free",
-      "Create a free account on the Next Gen website to gain",
-      "access to the platform and begin your credit repair journey.",
+      "Step 1: Register For Free - Create a free Next Gen account to access the platform and start repairing your credit.",
     ],
     video: highlightFirstVideo, 
     videoDuration: 3,
   },
   {
     id: 2,
-    textLists: ["Step 2: Examine Your Credit Report", 
-      "Utilize AI-driven technologies to examine and assess your",
-      "credit record, pinpointing areas requiring enhancement."],
+    textLists: ["Step 2: Examine Your Credit Report - Leverage AI to analyze your credit report and identify areas for improvement."],
     video: highlightSecondVideo,
     videoDuration: 6,
   },
   {
     id: 3,
     textLists: [
-      "Step 3: Select your plan",
-      "Choose the subscription package that most effectively addresses your requirements to",
-      "commence resolving your credit troubles with complete access to all features and resources.",
+      "Step 3: Select your plan - Select the subscription plan that best suits your needs to fully access tools and resolve credit issues.",
     ],
     video: highlightThirdVideo,
     videoDuration: 4,
   },
   {
     id: 4,
-    textLists: ["Step 4: Produce and Dispatch Next Generation Dispute Correspondence", "Utilize AI-powered compliance technology to write individualized dispute","letters and send them to credit bureaus, thereby increasing your credit score."],
+    textLists: ["Step 4: Produce and Dispatch - Next Generation Dispute Correspondence, Use AI-powered compliance tools to draft and send personalized dispute letters to credit bureaus boosting your credit score.",],
     video: highlightFourthVideo,
     videoDuration: 7,
   },
