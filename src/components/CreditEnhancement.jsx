@@ -84,9 +84,6 @@ const CreditEnhancement = () => {
         <br/>
         <br/>
         <br/>
-        <br/>
-        <br/>
-        <br/>
       <div
         className="text-center mb-12"
         ref={(el) => sectionsRef.current.push(el)}
