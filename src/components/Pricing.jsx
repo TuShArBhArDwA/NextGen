@@ -132,20 +132,20 @@ const Pricing = () => {
     <div id="pricing" className="bg-black text-white py-16">
       {Object.entries(plans).map(([section, cards]) => (
         <div key={section} className="mb-16">
-          <h2 className="text-4xl font-bold mb-8 text-center">{section}</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center decoration-yellow-500">
+            {section}
+          </h2>
           <div className="flex flex-wrap justify-center gap-8">
             {cards.map((plan, index) => (
               <motion.div
                 key={index}
                 ref={(el) => sectionsRef.current.push(el)}
-                className="w-full max-w-sm bg-gray-900 text-center rounded-lg shadow-lg p-6"
+                className="w-full max-w-sm bg-gray-800 text-center rounded-lg shadow-xl p-6 border border-gray-700 hover:border-yellow-500 transition-all"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               >
-                <div className="text-xl font-bold mb-4">{plan.name}</div>
-                <div className="text-4xl font-bold mb-4" style={{ color: "#FFD700" }}>
-                  {plan.price}
-                </div>
+                <div className="text-xl font-bold mb-4 text-yellow-500">{plan.name}</div>
+                <div className="text-4xl font-bold mb-4 text-yellow-400">{plan.price}</div>
                 <ul className="text-left text-sm space-y-2 mb-4">
                   {plan.services.map((service, i) => (
                     <li key={i} className="flex items-center">
@@ -167,6 +167,8 @@ const Pricing = () => {
           position: relative;
           overflow: hidden;
           z-index: 1;
+          background-color: #1a1a1a;
+          border: 2px solid #ffd700;
           transition: background-color 0.3s, color 0.3s;
         }
 
@@ -174,10 +176,6 @@ const Pricing = () => {
           background-color: #ffd700;
           color: #1a1a1a;
           box-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ffd700;
-        }
-
-        .glowing-button:focus {
-          outline: none;
         }
       `}</style>
     </div>
