@@ -22,7 +22,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between">
           <p className="text-gray-500 text-sm mb-3 md:mb-0">
-            ©2024 NextGen. All Rights Reserved.
+            ©2025 NextGen. All Rights Reserved.
           </p>
           <div className="flex items-center text-gray-500 text-xs">
             <span>Privacy Policy</span>
